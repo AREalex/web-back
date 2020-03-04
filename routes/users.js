@@ -29,15 +29,32 @@ router.get("/users/:name", function(req,res,next){
 router.post("/users", function(req,res,next){
     var user = req.body
 
-    db.users.insertOne(user,function(err,users){
+    db.users.find({
+        email: user.email
+    },function(err,users){
         if(err){
             res.send(err);
         }
-        console.log(users)
-        res.json({
-            res:"correct",
-            message:"register ok"
-        });
+        if(users.length==0){
+
+            db.users.insertOne(user,function(err,users){
+                if(err){
+                    res.send(err);
+                }
+                console.log(users)
+                res.json({
+                    res:"correct",
+                    message:"register ok"
+                });
+            })
+
+        }
+        else{
+            res.json({
+                res:"incorrect",
+                message:"user already exists"
+            }); 
+        }
     })
 })
 
