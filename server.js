@@ -5,6 +5,8 @@ var cors = require("cors");
 
 var index = require("./routes/index")
 var users = require("./routes/users")
+var produits = require("./routes/produits")
+
 
 var app = express()
 
@@ -25,3 +27,4 @@ app.use(bodyParser.urlencoded({extended:true}));
 //Routes
 app.use("/",index);
 app.use("/api",users);
+app.use("/api",produits);
