@@ -50,7 +50,7 @@ router.post("/panier", function (req, res, next) {
 
         }
         else {
-            db.panier.updateOne(users, produit, function (err, panier) {
+            db.panier.updateOne(panier, produit, function (err, panier) {
                 if (err) {
                     res.send(err);
                 }
