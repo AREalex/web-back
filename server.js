@@ -6,6 +6,8 @@ var cors = require("cors");
 var index = require("./routes/index")
 var users = require("./routes/users")
 var produits = require("./routes/produits")
+var panier = require("./routes/panier")
+
 
 
 var app = express()
@@ -28,3 +30,4 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use("/",index);
 app.use("/api",users);
 app.use("/api",produits);
+app.use("/api",panier);
