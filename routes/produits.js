@@ -6,19 +6,19 @@ var mongojs = require("mongojs");
 var db = mongojs("mongodb+srv://projet:projet@cluster0-9svap.mongodb.net/Projet?retryWrites=true&w=majority", ["produits"])
 
 router.get("/produits", function(req,res,next){
-    db.produits.find(function(err,users){
+    db.produits.find(function(err,produits){
         if(err){
             res.send(err);
         }
-        res.json(users);
+        res.json(produits);
     })
 })
 
 router.get("/produits/:name", function(req,res,next){
     const name =req.params.name
-    db.users.find({
+    db.produits.find({
         _id: name
-    },function(err,users){
+    },function(err,produits){
         if(err){
             res.send(err);
         }
