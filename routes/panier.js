@@ -26,22 +26,22 @@ router.get("/panier/:name", function (req, res, next) {
     })
 })
 
-router.post("/panier", function (req, res, next) {
+router.put("/panier", function (req, res, next) {
     var panier = req.body
 
     db.panier.find({
         users: panier.users
-    }, function (err, panier) {
+    }, function (err, result) {
         if (err) {
             res.send(err);
         }
-        if (panier.length == 0) {
+        if (result.length == 0) {
 
-            db.users.insertOne(panier, function (err, panier) {
+            db.users.insertOne(panier, function (err, result2) {
                 if (err) {
                     res.send(err);
                 }
-                console.log(panier)
+                console.log(result2)
                 res.json({
                     res: "correct",
                     message: "register ok"
@@ -50,11 +50,12 @@ router.post("/panier", function (req, res, next) {
 
         }
         else {
-            db.panier.updateOne(panier, produit, function (err, panier) {
+            
+            db.panier.updateOne(panier, produit, function (err, result2) {
                 if (err) {
                     res.send(err);
                 }
-                console.log(panier)
+                console.log(result2)
                 res.json({
                     res: "correct",
                     message: "register ok"
