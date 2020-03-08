@@ -12,7 +12,7 @@ router.get("/villes", function(req,res,next){
         if(err){
             res.send(err);
         }
-        res.json(villes);
+        res.json(Nom);
     })
 })
 
