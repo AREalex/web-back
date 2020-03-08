@@ -18,7 +18,7 @@ router.get("/villes/:name", function(req,res,next){
     const name =req.params.name
     db.villes.find({
         Nom: name
-    },function(err,users){
+    },function(err,villes){
         if(err){
             res.send(err);
         }
