@@ -7,7 +7,7 @@ var index = require("./routes/index")
 var users = require("./routes/users")
 var produits = require("./routes/produits")
 var panier = require("./routes/panier")
-var panier = require("./routes/villes")
+var villes = require("./routes/villes")
 
 
 
