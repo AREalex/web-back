@@ -14,6 +14,7 @@ router.get("/catégories", function(req,res,next){
     })
 })
 
+
 router.get("/catégories/:name", function(req,res,next){
     const name =req.params.name
     db.catégories.find({
