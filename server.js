@@ -35,3 +35,4 @@ app.use("/api",users);
 app.use("/api",produits);
 app.use("/api",panier);
 app.use("/api",categories);
+app.use("/api",villes);
