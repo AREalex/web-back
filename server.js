@@ -7,6 +7,7 @@ var index = require("./routes/index")
 var users = require("./routes/users")
 var produits = require("./routes/produits")
 var panier = require("./routes/panier")
+var panier = require("./routes/villes")
 
 
 
@@ -31,3 +32,4 @@ app.use("/",index);
 app.use("/api",users);
 app.use("/api",produits);
 app.use("/api",panier);
+app.use("/api",villes);
