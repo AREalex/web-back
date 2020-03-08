@@ -64,3 +64,4 @@ router.post("/panier", function (req, res, next) {
         }
     })
 })
+module.exports = router;
