@@ -2,9 +2,7 @@ var express = require("express");
 var path = require("path");
 var bodyParser = require("body-parser");
 var cors = require("cors");
-var morgan = require('morgan');  
-var passport = require('passport');  
-var jwt = require('jsonwebtoken');  
+ 
 
 var index = require("./routes/index")
 var users = require("./routes/users")
@@ -43,10 +41,3 @@ app.use("/api",villes);
 app.use(bodyParser.urlencoded({ extended: false }));  
 app.use(bodyParser.json());
 
-// Log les requêtes
-app.use(morgan('dev'));  
-
-// Route d'accueil
-app.get('/', function(req, res) {  
-  res.send('Home');
-});
