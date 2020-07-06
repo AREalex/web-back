@@ -1,9 +1,6 @@
 var express = require("express");
 var router = express.Router();
 var mongojs = require("mongojs");
-const jwt = require('jsonwebtoken');
-const { User, RefreshToken } = require('./models');
-const config = require('./config');
 
 
 var db = mongojs("mongodb+srv://projet:projet@cluster0-9svap.mongodb.net/Projet?retryWrites=true&w=majority", ["users"])
