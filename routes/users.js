@@ -59,7 +59,7 @@ router.post("/users", function(req,res,next){
     })
 })
 
-router.delete("/users", async function(req,res,next) {
+/*router.delete("/users", async function(req,res,next) {
 
     var {user} = req.body
 
@@ -78,6 +78,6 @@ router.delete("/users", async function(req,res,next) {
       
     
     })
-})
+})*/
 
 module.exports = router;
