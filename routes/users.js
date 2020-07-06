@@ -59,4 +59,25 @@ router.post("/users", function(req,res,next){
     })
 })
 
+router.delete("/users", async function(req,res,next) {
+
+    var {user} = req.body
+
+  
+    db.users.remove({"user" : user}, async function(err,user){
+      if(err){
+        console.log("Erreur remove")
+        res.send(err);
+      }
+
+    console.log("user removes")
+        res.json({
+          res:"correct",
+          message:"delete user"
+        });
+      
+    
+    })
+})
+
 module.exports = router;
